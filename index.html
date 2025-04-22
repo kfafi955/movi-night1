@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>موقع الأفلام</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <!-- التصميم المخصص -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap");
+      body {
+        background-color: #1a1a1a;
+        color: white;
+        font-family: "Cairo", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: <weight>;
+        font-style: normal;
+        font-variation-settings: "slnt" 0;
+      }
+
+      a {
+        text-decoration: none;
+        text-transform: capitalize;
+        color: white;
+      }
+      .movie-card {
+        background: #2a2a2a;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: transform 0.3s;
+      }
+      .movie-card:hover {
+        transform: translateY(-5px);
+      }
+      .swiper-slide {
+        height: auto !important;
+      }
+
+      ul li i {
+        font-size: 30px;
+        height: auto !important;
+        color: cornflowerblue;
+      }
+
+      #movies {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- شريط التنقل باستخدام Bootstrap -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Movi Night</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">الرئيسية</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#movies">الأفلام</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about"
+                ><i class="fa-brands fa-square-facebook"></i
+              ></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about"
+                ><i class="fa-brands fa-telegram"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- سلايدر الأفلام الرائجة باستخدام Swiper -->
+    <section class="py-5" id="movies">
+      <div class="container">
+        <h2 class="mb-4">أحدث الأفلام</h2>
+        <div class="row g-4">
+          <div class="col-md-4 col-lg-3">
+            <div class="movie-card">
+              <img
+                src="./65a23bd9fb01161c9417960efa315172.jpg"
+                class="img-fluid"
+                alt="فيلم 1"
+              />
+              <div class="p-3">
+                <h5>اسم الفيلم</h5>
+                <p class="c">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea,
+                  minima.
+                </p>
+                <button class="btn btn-danger btn-sm">
+                  <a href="">شاهد الان</a>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- كرر البطاقات -->
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم الأفلام باستخدام Bootstrap Grid -->
+    <section class="py-5" id="movies">
+      <div class="container">
+        <h2 class="mb-4">أحدث الأفلام</h2>
+        <div class="row g-4">
+          <div class="col-md-4 col-lg-3">
+            <div class="movie-card">
+              <img
+                src="./65a23bd9fb01161c9417960efa315172.jpg"
+                class="img-fluid"
+                alt="فيلم 1"
+              />
+              <div class="p-3">
+                <h5>اسم الفيلم</h5>
+                <p class="text-muted">وصف قصير...</p>
+                <button class="btn btn-danger btn-sm">التفاصيل</button>
+              </div>
+            </div>
+          </div>
+          <!-- كرر البطاقات -->
+        </div>
+      </div>
+    </section>
+
+    <!-- إضافة السكربتات -->
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- تهيئة Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          640: { slidesPerView: 2 },
+          768: { slidesPerView: 3 },
+          1024: { slidesPerView: 4 },
+        },
+      });
+    </script>
+  </body>
+</html>
